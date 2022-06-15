@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row">
+        <!-- si la pantalla es pequenia que ocupe todo (12 col), si es mediadia que 4 col de 12 -->
+        <div class="col-sm-12 col-md-4" *ngFor="let variableNGFORrestaurant of restaurants">
+            <!-- hay que poner el prefijo let antes del nombre de la variable en el ngFor -->
+            <mat-card class="mt-4 example-card">
+                <mat-card-header>
+                    <div mat-card-avatar class="example-header-image"></div>
+                </mat-card-header>
+                <img mat-card-image class="imageCard" src="{{variableNGFORrestaurant.image}}" alt="Restaurant">
+                <mat-card-content>
+                    <mat-card-title>{{variableNGFORrestaurant.name}}</mat-card-title>
+                    <mat-card-subtitle>{{variableNGFORrestaurant.address}}</mat-card-subtitle>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-button [routerLink]="['booking', variableNGFORrestaurant.id]"
+                        class="btn btn-primary">Reservar</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+</div>
